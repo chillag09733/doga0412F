@@ -12,7 +12,7 @@ export const ApiProvider = ({ children }) => {
                 setList(response.data)
             })
             .catch(function (error) {
-                console.log(error)
+                //console.log(error)
             })
             .finally(function () { })
     }
@@ -54,7 +54,8 @@ export const ApiProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        getAdat("/tevekenysegs")
+        console.log("vmi")
+        getAdat("http://localhost:8000/api/tevekenysegs")
     }, [])
 
     return(

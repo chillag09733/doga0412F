@@ -1,22 +1,17 @@
 import React, { useContext } from 'react'
-import Card from 'react-bootstrap/Card';
 import { ApiContext } from '../context/ApiContext';
+import Sor from './Sor';
+import Card from 'react-bootstrap/Card';
 
 function Kartya() {
-    const { list, getAdat } = useContext(ApiContext)
-
+    const { list } = useContext(ApiContext)
+    console.log(list)
     return (
-        <>
+        <Card style={{ width: '25rem' }}>
             {list.map((tev) => {
-                return <Card style={{ width: '18rem' }} tev={tev} key={tev.id}>
-                    <Card.Body>
-                        <Card.Title>{tev.kat_id}</Card.Title>
-                        
-                    </Card.Body>
-                </Card>
+                return <Sor tev={tev} key={tev.id} />;
             })}
-
-        </>
+        </Card>
 
     )
 }
